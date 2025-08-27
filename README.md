@@ -1,8 +1,6 @@
 <h1>Hi 👋, I'm Ramachandran Asokan</h1>
 <h3 >Welcome to my profile! I'm a software developer with a passion for developing innovative solutions. Here's a little about me:</h3>
 
-- 🌱 I’m currently learning **React, Spring, node.js**
-
 - 👨‍💻 Live project available at [Portfolio](https://ram24102002.github.io/Portfolio/)
 
 - 📫 How to reach me **Ramachandran24102002@gmail.com**
