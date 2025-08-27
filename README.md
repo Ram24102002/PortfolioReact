@@ -1,5 +1,5 @@
 <h1>Hi 👋, I'm Ramachandran Asokan</h1>
-<h3 >Welcome to my profile! I'm a software developer with a passion for developing innovative solutions. Here's a little about me:</h3>
+<h3 >Welcome to my profile! I'm a software developer with a passion for developing innovative solutions. Here's a little about this prooject:</h3>
 
 - 👨‍💻 Live project available at [Portfolio](https://ram24102002.github.io/Portfolio/)
 
