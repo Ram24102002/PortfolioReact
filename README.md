@@ -6,7 +6,7 @@
 - 📫 How to reach me **Ramachandran24102002@gmail.com**
 
 
-<h3 align="left">Languages and Tools used in this projecth:</h3>
+<h3 align="left">Languages and Tools used in this project:</h3>
 <p align="left"> 
    
   
