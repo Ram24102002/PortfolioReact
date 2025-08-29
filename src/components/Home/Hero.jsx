@@ -1,4 +1,5 @@
 import React from "react";
+import profileImage from "../../assets/ProfileImage.png"
 import { Github, Instagram, Linkedin, Zap, Nfc } from "lucide-react";
 
 function Hero() {
@@ -9,13 +10,9 @@ function Hero() {
         <div className="flex items-center gap-4 mb-16">
           {/* Profile Image */}
           <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-400 to-yellow-500 flex items-center justify-center flex-shrink-0">
-            <svg
-              viewBox="0 0 24 24"
-              className="w-10 h-10 text-black"
-              fill="currentColor"
-            >
-              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-            </svg>
+            <img 
+            className="w-20 h-20 rounded-full object-cover" 
+            src={profileImage} alt="" />
           </div>
 
           {/* Name and Social Links */}
@@ -67,7 +64,7 @@ function Hero() {
         </div>
 
         {/* CTA Section (Optional) */}
-        <div className="mt-12 flex flex-col sm:flex-row gap-4">
+        <div className="mt-12 w-full flex flex-col sm:flex-row gap-4">
           <button className="bg-lime-400 text-black px-8 py-3 rounded-lg flex font-medium hover:bg-lime-300  transition-colors duration-200">
             <Zap />
             View My Work
@@ -75,6 +72,10 @@ function Hero() {
           <button className="bg-white text-black px-8 py-3 rounded-lg font-medium flex hover:bg-lime-400  transition-colors duration-200">
             Get In Touch <Nfc />
           </button>
+        </div>
+        <div className="flex items-center gap-2 mt-6">
+          <div className="w-2 h-2 bg-green-500 rounded-full text-white text-sm md:text-lg font-medium"></div>
+          <p>Available</p>
         </div>
       </div>
     </div>
