@@ -18,10 +18,10 @@ const PeopleIWorkedWith = () => {
         {/* Header */}
         <div className="mb-12">
           <h2 className="text-white text-4xl md:text-5xl font-bold mb-4">
-            TRUSTED BRANDS I'VE
+            People I've
           </h2>
           <h2 className="text-white text-4xl md:text-5xl font-bold mb-6">
-            PARTNERED WITH
+            Worked With
           </h2>
           <p className="text-gray-400 text-lg">
             I've worked with amazing brands like...
@@ -31,7 +31,7 @@ const PeopleIWorkedWith = () => {
         {/* Infinite Scroll Row */}
         <div className="relative w-full overflow-hidden">
   <div className="flex animate-marquee">
-    {[...brands, ...brands].map((brand, index) => (
+    {[...brands].map((brand, index) => (
       <div
         key={index}
         className="flex items-center justify-center px-8 min-w-[180px]"
@@ -39,7 +39,7 @@ const PeopleIWorkedWith = () => {
         <img
           src={brand.logo}
           alt={brand.name}
-          className="h-20 object-contain"
+          className="h-50 object-contain"
         />
       </div>
     ))}

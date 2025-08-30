@@ -23,7 +23,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="bg-black py-20 p-5 md:p-30">
+    <div className="bg-black py-10 p-5 md:px-20">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-12">
