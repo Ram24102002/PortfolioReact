@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink } from 'lucide-react';
 import AsanPage from '../../assets/ProjectImages/Asandevnest.png'
-import VoidPage from '../../assets/ProjectImages/VoidPage.png'
+import VoidPage from '../../assets/ProjectImages/voidPage.png'
 
 const Projects = () => {
   const projects = [
