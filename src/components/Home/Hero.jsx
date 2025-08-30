@@ -3,11 +3,12 @@ import profileImage from "../../assets/ProfileImage.png"
 import { Github, Instagram, Linkedin, Zap, Nfc } from "lucide-react";
 
 function Hero() {
+  
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center px-6 py-12">
+    <div className="min-h-[70%] bg-black text-white flex items-center justify-center px-6 py-12">
       <div className="max-w-6xl w-full">
         {/* Header Section */}
-        <div className="flex items-center gap-4 mb-16">
+        <div className="flex items-center gap-4 mb-9">
           {/* Profile Image */}
           <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-400 to-yellow-500 flex items-center justify-center flex-shrink-0">
             <img 
@@ -49,15 +50,14 @@ function Hero() {
         </div>
 
         {/* Main Heading */}
-        <div className="space-y-6">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-            I Craft Websites That{" "}
-            <span className="block">Captivate, Inspire, and</span>
-            <span className="block">Elevate Your Brand</span>
+        <div className="space-y-6 animate-fadeIn">
+          <h2 className="text-4xl px-5 py-4 md:text-6xl lg:text-6xl font-bold leading-tight tracking-tight">
+            I Craft Websites That Captivate, {" "}
+            <span className="block">Inspire, and Elevate Your Brand 🧑‍💻</span>
           </h2>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed mt-8">
+          <p className="text-lg px-3 animate-fade-in md:text-xl text-gray-400 max-w-2xl leading-relaxed mt-8">
             With 2 years of experience in web design, I specialize in crafting
             visually stunning, user-friendly, and high-converting websites.
           </p>
@@ -69,13 +69,13 @@ function Hero() {
             <Zap />
             View My Work
           </button>
-          <button className="bg-white text-black px-8 py-3 rounded-lg font-medium flex hover:bg-lime-400  transition-colors duration-200">
+          <button className="bg-white text-black px-8 py-3 rounded-lg font-medium flex hover:bg-lime-100  transition-colors duration-200">
             Get In Touch <Nfc />
           </button>
         </div>
         <div className="flex items-center gap-2 mt-6">
-          <div className="w-2 h-2 bg-green-500 rounded-full text-white text-sm md:text-lg font-medium"></div>
-          <p>Available</p>
+          <div className="w-3 h-3 animate-bounce bg-green-500 rounded-full text-white text-sm md:text-lg font-medium"></div>
+          <p>Available for work</p>
         </div>
       </div>
     </div>

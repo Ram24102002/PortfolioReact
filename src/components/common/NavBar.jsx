@@ -36,13 +36,13 @@ export default function Navbar() {
         <div className="flex flex-col-reverse md:flex-row items-center justify-between h-30 md:h-16">
           {/* Location */}
           <div className="flex items-center gap-2 p-1">
-            <div className="w-2 h-2 bg-green-500 rounded-full text-white text-sm md:text-lg font-medium"></div>
+            <div className="w-3 h-3 animate-pulse bg-green-500 rounded-full text-white text-sm md:text-lg font-medium"></div>
             <span className="">Chennai,India</span>
             <p>{time}</p>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="flex items-center gap-8 p-1 pt-4">
+          <div className="flex items-center gap-6 p-1 pt-8">
             {/* Navigation Links */}
             <div className="flex items-center gap-6">
               {navItems.map((item) => (
