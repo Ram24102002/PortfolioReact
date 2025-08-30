@@ -43,6 +43,7 @@ const PeopleIWorkedWith = () => {
         />
       </div>
     ))}
+   
   </div>
 </div>
 

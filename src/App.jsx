@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/common/NavBar";
 import Home from "./pages/home";
+import PageNotFound from "./pages/PageNotFound";
 
 
 
@@ -20,6 +21,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/temp" elament={<Temp />} />
+
+        {/* other routes */}
+      <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Router>
   );
