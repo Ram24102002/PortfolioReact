@@ -141,7 +141,7 @@ const TestimonialsComponent = () => {
   }, []);
 
   return (
-    <div className="bg-black text-white min-h-screen flex items-center justify-center p-4 md:p-8">
+    <div className="bg-black text-white py-10 md:py-30 flex items-center justify-center p-4 md:p-8">
       <div className="max-w-7xl w-full relative">
         {/* Navigation Arrow Left */}
         <button
