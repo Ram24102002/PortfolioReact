@@ -13,7 +13,7 @@ const PeopleIWorkedWith = () => {
   ];
 
   return (
-    <section className="bg-black py-16 px-6 overflow-hidden">
+    <section className=" py-16 px-6 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-12">
@@ -23,14 +23,14 @@ const PeopleIWorkedWith = () => {
           <h2 className="text-white text-4xl md:text-5xl font-bold mb-6">
             Worked With
           </h2>
-          <p className="text-gray-400 text-lg">
+          {/* <p className="text-gray-400 text-lg">
             I've worked with amazing brands like...
-          </p>
+          </p> */}
         </div>
 
         {/* Infinite Scroll Row */}
         <div className="relative w-full overflow-hidden">
-  <div className="flex animate-marquee">
+  <div className="grid grid-cols-2 md:grid-cols-4 animate-marquee">
     {[...brands].map((brand, index) => (
       <div
         key={index}
@@ -42,7 +42,14 @@ const PeopleIWorkedWith = () => {
           className="h-50 object-contain"
         />
       </div>
+      
     ))}
+     {/* Left fade */}
+  {/* <div className="pointer-events-none absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-black to-transparent"></div> */}
+
+  {/* Right fade */}
+  {/* <div className="pointer-events-none absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-black to-transparent"></div> */}
+
    
   </div>
 </div>

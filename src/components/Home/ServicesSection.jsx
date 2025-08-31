@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollFadeIn from '../../Animations/ScrollFadeIn';
 
 const ServicesSection = () => {
   const services = [
@@ -47,8 +48,10 @@ const ServicesSection = () => {
         </div>
 
         {/* Services */}
+        
         <div className="space-y-16">
           {services.map((service) => (
+            <ScrollFadeIn>
             <div key={service.id} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               {/* Left Column - Title and Description */}
               <div>
@@ -77,6 +80,7 @@ const ServicesSection = () => {
                 </div>
               </div>
             </div>
+            </ScrollFadeIn>
           ))}
         </div>
       </div>

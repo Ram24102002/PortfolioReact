@@ -51,9 +51,9 @@ function Hero() {
 
         {/* Main Heading */}
         <div className="space-y-6 animate-fadeIn">
-          <h2 className="text-4xl px-5 py-4 md:text-6xl lg:text-6xl font-bold leading-tight tracking-tight">
-            I Craft Websites That Captivate, {" "}
-            <span className="block">Inspire, and Elevate Your Brand 📈</span>
+          <h2 className="text-4xl px-3 py-4 md:text-6xl lg:text-6xl font-bold leading-tight tracking-tight">
+            I Craft Full-Stack Websites That <br /> Captivate,
+            Inspire,<br className="md:hidden" /> and Elevate <br /> Your Brand 📈
           </h2>
 
           {/* Description */}

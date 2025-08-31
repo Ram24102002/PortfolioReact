@@ -27,8 +27,8 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-3xl md:text-6xl font-bold text-white md:mb-2">RECENT</h1>
-          <h2 className="text-3xl md:text-6xl font-bold text-gray-600">PROJECTS</h2>
+          <h1 className="text-4xl md:text-7xl font-bold text-white md:mb-2">RECENT</h1>
+          <h2 className="text-4xl md:text-7xl font-bold text-gray-600">PROJECTS</h2>
         </div>
 
         {/* Projects Grid */}
