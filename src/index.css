@@ -35,7 +35,7 @@ html {
 
 
 
-
+/* Scroll Fade In Animation */
 @theme{
   --animate-fadein:fadein 1s ease-out forwards;
 

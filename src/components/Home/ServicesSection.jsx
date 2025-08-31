@@ -42,7 +42,7 @@ const ServicesSection = () => {
     <div className="bg-black text-white min-h-screen p-8">
         
       {/* Header */}
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto  md:px-10">
         <div className="flex justify-between items-start mb-16">
           <h1 className="text-4xl md:text-6xl font-bold">My Services</h1>
         </div>

@@ -6,6 +6,7 @@ import QuickTalk from "../components/Home/QuickTalk";
 import ServicesSection from "../components/Home/ServicesSection";
 import ClientTestimonials from "../components/Home/ClientTestimonials";
 import ScrollFadeIn from "../Animations/ScrollFadeIn";
+import TestimonialsComponent from "../components/Home/TestimonialsComponent";
 
 function home() {
   return (
@@ -27,6 +28,7 @@ function home() {
 
       {/* Client Testimonials */}
       {/* <ClientTestimonials /> */}
+      <TestimonialsComponent />
 
       {/* Quick Talk */}
       <ScrollFadeIn>
