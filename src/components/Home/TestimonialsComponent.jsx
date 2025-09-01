@@ -24,7 +24,7 @@ const TestimonialsComponent = () => {
       id: 2,
       name: "Deepika",
       role: "VOID Fashion",
-      rating: 4.7,
+      rating: 5.0,
       avatar: Girl1,
       text: "“Clean code, great communication, and on-time delivery — highly recommended.”"
     },
@@ -39,7 +39,7 @@ const TestimonialsComponent = () => {
     {
       id: 4,
       name: "Seenu",
-      role: "Tech CEO",
+      role: "Amazon",
       rating: 5.0,
       avatar: Seenu,
       text: "“Ram blends design and functionality perfectly — our site looks great and works flawlessly.”"
@@ -141,7 +141,7 @@ const TestimonialsComponent = () => {
   }, []);
 
   return (
-    <div className="bg-black text-white py-10 md:py-30 flex items-center justify-center p-4 md:p-8">
+    <div className="bg-black text-white py-10 md:py-20 flex items-center justify-center p-4 md:p-8">
       <div className="max-w-7xl w-full relative">
         {/* Navigation Arrow Left */}
         <button
@@ -196,7 +196,7 @@ const TestimonialsComponent = () => {
                       <span className="text-white font-medium text-sm md:text-base">
                         {testimonial.rating}/5
                       </span>
-                      <Star className="w-3 h-3 md:w-4 md:h-4 fill-yellow-400 text-yellow-400" />
+                      <Star className="w-3 h-3 md:w-4 md:h-4 fill-lime-400 text-lime-400" />
                     </div>
                   </div>
                 </div>

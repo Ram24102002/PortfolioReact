@@ -28,7 +28,13 @@ function home() {
 
       {/* Client Testimonials */}
       {/* <ClientTestimonials /> */}
-      <TestimonialsComponent />
+
+      {/* Testimonials Component */}
+      <ScrollFadeIn>
+      <div>
+        <TestimonialsComponent />
+      </div>
+      </ScrollFadeIn>
 
       {/* Quick Talk */}
       <ScrollFadeIn>

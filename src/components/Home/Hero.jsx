@@ -1,6 +1,5 @@
-import React from "react";
 import profileImage from "../../assets/ProfileImage.png"
-import { Github, Instagram, Linkedin, Zap, Nfc } from "lucide-react";
+import { Github, Instagram, Linkedin, Zap, Paperclip } from "lucide-react";
 
 function Hero() {
   
@@ -25,23 +24,26 @@ function Hero() {
             {/* Social Media Icons */}
             <div className="flex items-center gap-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/in/ramachandran24-asokan/"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
-                aria-label="Twitter"
+                aria-label="Linkedin"
+                target="_blank"
               >
                 <Linkedin size={20} />
               </a>
               <a
-                href="#"
+                href="https://github.com/Ram24102002"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
-                aria-label="Instagram"
+                aria-label="Github"
+                target="_blank"
               >
                 <Github size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/ram_24_wanderer/"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
-                aria-label="LinkedIn"
+                aria-label="Instagram"
+                target="_blank"
               >
                 <Instagram size={20} />
               </a>
@@ -65,13 +67,17 @@ function Hero() {
 
         {/* CTA Section (Optional) */}
         <div className="mt-12 w-full flex flex-col sm:flex-row gap-4">
-          <button className="bg-lime-400 text-black px-8 py-3 rounded-lg flex font-medium hover:bg-lime-300  transition-colors duration-200">
-            <Zap />
-            View My Work
+          <a href="">
+            <button className="bg-lime-400 text-black px-8 py-3 w-50 rounded-lg flex font-medium hover:bg-lime-300  transition-colors duration-200">
+            <Zap />Get In Touch
           </button>
-          <button className="bg-white text-black px-8 py-3 rounded-lg font-medium flex hover:bg-lime-100  transition-colors duration-200">
-            Get In Touch <Nfc />
+          </a>
+          <a href="https://drive.google.com/file/d/1at0UtzIrdacFqeUjQ__ZkYR5-f22lvdE/view?usp=drive_link" target="_blank">
+            <button className="bg-white text-black  px-8 py-3 w-50 rounded-lg font-medium flex hover:bg-lime-100  transition-colors duration-200">
+            View My CV
+            <Paperclip />
           </button>
+          </a>
         </div>
         <div className="flex items-center gap-2 mt-6">
           <div className="w-3 h-3 animate-bounce bg-green-500 rounded-full text-white text-sm md:text-lg font-medium"></div>
