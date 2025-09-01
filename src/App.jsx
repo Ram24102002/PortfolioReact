@@ -10,6 +10,7 @@ import {
 import Navbar from "./components/common/NavBar";
 import Home from "./pages/home";
 import PageNotFound from "./pages/PageNotFound";
+import Footer from "./components/common/Footer";
 
 
 
@@ -25,6 +26,7 @@ function App() {
         {/* other routes */}
       <Route path="*" element={<PageNotFound />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

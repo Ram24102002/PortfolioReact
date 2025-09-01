@@ -68,12 +68,12 @@ function Hero() {
         {/* CTA Section (Optional) */}
         <div className="mt-12 w-full flex flex-col sm:flex-row gap-4">
           <a href="">
-            <button className="bg-lime-400 text-black px-8 py-3 w-50 rounded-lg flex font-medium hover:bg-lime-300  transition-colors duration-200">
+            <button className="bg-lime-400 text-black px-8 py-3 w-full md:w-50  rounded-lg flex justify-center font-medium hover:bg-lime-300  transition-colors duration-200">
             <Zap />Get In Touch
           </button>
           </a>
           <a href="https://drive.google.com/file/d/1at0UtzIrdacFqeUjQ__ZkYR5-f22lvdE/view?usp=drive_link" target="_blank">
-            <button className="bg-white text-black  px-8 py-3 w-50 rounded-lg font-medium flex hover:bg-lime-100  transition-colors duration-200">
+            <button className="bg-white text-black text-center flex justify-center  px-8 py-3 w-full md:w-50 rounded-lg font-medium flex hover:bg-lime-100  transition-colors duration-200">
             View My CV
             <Paperclip />
           </button>
