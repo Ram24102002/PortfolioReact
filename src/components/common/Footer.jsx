@@ -1,11 +1,5 @@
 import profileImage from "../../assets/ProfileImage.png"
 import { Mail, Phone, ExternalLink, Github, Linkedin, MessageCircle, Instagram } from 'lucide-react';
-import GitHubImg from '../../assets/ContactUs/GitHub.jpg'
-import linkedInImg from '../../assets/ContactUs/linkedin.png'
-import whatsappImg from '../../assets/ContactUs/whatsapp.png'
-import InstagramImg from '../../assets/ContactUs/Instagram.png'
-import GmailIcon from '../../assets/ContactUs/GmailLogo.webp'
-import DailerLogo from '../../assets/ContactUs/DailerLogo.webp'
 
 export default function Footer() {
   return (
@@ -17,7 +11,7 @@ export default function Footer() {
       {/* Main content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Profile section */}
-        <div className="mb-16">
+        <div className="mb-5 md:mb-16">
           {/* Profile Image */}
           <div className="w-20 h-20 mb-10 rounded-full bg-gradient-to-br from-orange-400 to-yellow-500 flex items-center justify-center flex-shrink-0">
             <img 
@@ -25,12 +19,9 @@ export default function Footer() {
             src={profileImage} alt="" />
           </div>
           
-          <h1 className="text-xl text-gray-300 mb-2">
-            I'm <span className="text-white font-medium">Ram</span>, a web designer with 2 years of experience in crafting
+          <h1 className="text-xl text-gray-300 mb-1">
+            Wana build a <span className="text-white text-2xl">modern, sleek and high-performing websites </span>that helps your business stand out. <span className="text-2xl">!</span>
           </h1>
-          <p className="text-xl text-gray-300">
-            modern, high-performing websites that help businesses stand out.
-          </p>
         </div>
 
         {/* CTA Section */}
@@ -38,7 +29,7 @@ export default function Footer() {
           <h2 className="text-6xl md:text-7xl font-bold">
             Let's Work Together!
           </h2>
-          <button className="bg-lime-400 text-black px-8 py-4 mt-15 md:mt-0  rounded-full font-medium hover:bg-lime-300 transition-colors flex items-center gap-2 group">
+          <button className="bg-lime-400 text-black px-8 py-4 mt-15 md:mt-0  rounded-full hover:rounded-xl transform transition duration-1000 font-medium hover:bg-lime-300 transition-colors flex items-center gap-2 group">
             Let's Talk
             <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>

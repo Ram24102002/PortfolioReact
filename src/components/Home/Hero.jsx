@@ -1,5 +1,6 @@
 import profileImage from "../../assets/ProfileImage.png"
 import { Github, Instagram, Linkedin, Zap, Paperclip } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function Hero() {
   
@@ -67,11 +68,13 @@ function Hero() {
 
         {/* CTA Section (Optional) */}
         <div className="mt-12 w-full flex flex-col sm:flex-row gap-4">
-          <a href="">
+          <Link 
+          to={"/get-in-touch"}
+          onClickCapture={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <button className="bg-lime-400 text-black px-8 py-3 w-full md:w-50  rounded-lg flex justify-center font-medium hover:bg-lime-300  transition-colors duration-200">
             <Zap />Get In Touch
           </button>
-          </a>
+          </Link>
           <a href="https://drive.google.com/file/d/1at0UtzIrdacFqeUjQ__ZkYR5-f22lvdE/view?usp=drive_link" target="_blank">
             <button className="bg-white text-black text-center flex justify-center  px-8 py-3 w-full md:w-50 rounded-lg font-medium flex hover:bg-lime-100  transition-colors duration-200">
             View My CV
