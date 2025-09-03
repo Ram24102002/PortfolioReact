@@ -16,10 +16,18 @@ import GetInTouch from "./pages/GetInTouch";
 
 
 
-function App() {
-  return (
-    <Router>
-      <Navbar />
+function AppContent(){
+  const location = useLocation();
+  const hideLayoutRoutes = ['/get-in-touch'];
+
+  const shouldHideLayout = hideLayoutRoutes.includes(location.pathname);
+
+return(
+<>
+
+  {!shouldHideLayout &&  <Navbar />}
+
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/temp" elament={<Temp />} />
@@ -28,7 +36,21 @@ function App() {
         {/* other routes */}
       <Route path="*" element={<PageNotFound />} />
       </Routes>
-      <Footer />
+      
+  {!shouldHideLayout &&  <Footer />}
+</>
+)
+  
+
+
+
+}
+
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }

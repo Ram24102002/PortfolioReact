@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Mail, Twitter, Linkedin, Dribbble, Github } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Mail, Linkedin, Github, ArrowLeft, Phone, MessageCircle, Instagram  } from 'lucide-react';
 
 export default function GetInTouch() {
 
@@ -7,7 +8,7 @@ export default function GetInTouch() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-
+2
   const handleSubmit = async () => {
     setIsSubmitting(true);
     
@@ -23,41 +24,58 @@ export default function GetInTouch() {
     }, 3000);
   };
 
-  const socialLinks = [
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Github, href: '#', label: 'Behance' },
-    { icon: Dribbble, href: '#', label: 'Dribbble' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' }
-  ];
 
   return (
     <div className="min-h-screen bg-black text-white p-8 flex items-center justify-center">
       <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12">
         
         {/* Left Column - Contact Info */}
-        <div className="flex flex-col justify-between h-full min-h-[500px]">
+        <div className="flex flex-col justify-around h-full min-h-[500px]">
+          <div>
+            <Link to={'/'}>
+                <button 
+                id='backButton' 
+                className="bg-lime-400 text-black px-8 py-4 rounded-full hover:rounded-xl transform transition duration-1000 font-medium hover:bg-lime-300 transition-colors flex items-center gap-2 group"
+                onMouseEnter={() => document.getElementById('GBH').classList.remove('hidden')}
+                onMouseLeave={() => document.getElementById('GBH').classList.add('hidden')}
+                >
+                  <ArrowLeft /> <span id='GBH' className='hidden'>Go back home</span>
+                </button>
+            </Link>
+          </div>
           <div>
             <h2 className="text-3xl lg:text-4xl font-light mb-8">For Business enquiry</h2>
             
-            <div className="flex items-center space-x-3 text-gray-300">
-              <Mail className="w-5 h-5" />
-              <span className="text-lg">ramachandran24102002@gmail.com</span>
+            {/* Social icons */}
+            <div className="flex flex-col space-x-4 text-align-left">
+              <a href="https://github.com/Ram24102002" target="_blank" className=" p-2   flex items-center  ">
+                <Github size={40} className="text-lime-400" />
+                <p className="ml-2 hover:underline">GitHub</p>
+              </a>
+              <a href="https://www.linkedin.com/in/ramachandran24-asokan/" target="_blank" className=" p-2   flex items-center ">
+                <Linkedin size={40}  className=" text-lime-400" />
+                <p className="ml-2 hover:underline">LinkedIn</p>
+              </a>
+              <a href="https://wa.me/917305790119" className=" p-2   flex items-center ">
+                <MessageCircle size={40} className=" text-lime-400" />
+                <p className="ml-2 hover:underline">Whatsapp</p>
+              </a>
+              <a href="https://www.instagram.com/ram_24_wanderer" className=" p-2  flex items-center ">
+                <Instagram size={40}  className="text-lime-400" />
+                <p className="ml-2 hover:underline">Instagram/ram_24_wanderer</p>
+              </a>
+              <a href="mailto:ramachandran24102002@gmail.com" className=" p-2  flex items-center">
+                <Mail size={40}   className="text-lime-400"/>
+                <p className="ml-2 hover:underline">ramachandran24102002@gmail.com</p>
+              </a>
+              <a href="tel:+917305790119" className=" p-2   flex items-center ">
+                <Phone size={40}  className=" text-lime-400" />
+                <p className="ml-2 hover:underline">+91 7305790119</p>
+              </a>
             </div>
           </div>
 
-          {/* Social Media Icons - Bottom positioned */}
-          <div className="flex space-x-4 mt-auto">
-            {socialLinks.map(({ icon: Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                className="w-12 h-12 bg-gray-800 rounded-md flex items-center justify-center hover:bg-gray-700 transition-colors duration-300 group"
-                aria-label={label}
-              >
-                <Icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-300" />
-              </a>
-            ))}
-          </div>
+          
         </div>
 
         {/* Right Column - Contact Form */}
@@ -96,8 +114,8 @@ export default function GetInTouch() {
               </label>
               <textarea
                 name="message"
-                rows={6}
-                className="w-full px-4 py-3 bg-zinc-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-stone-500 focus:border-transparent transition-colors duration-300 resize-none"
+                rows={5}
+                className="w-full px-4 py-3 bg-zinc-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-stone-500 focus:border-transparent transition-colors duration-300 "
               />
             </div>
 
