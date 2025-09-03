@@ -1,13 +1,13 @@
+import { div } from "framer-motion/client";
+import ScrollFadeIn from "../../Animations/ScrollFadeIn";
 import profileImage from "../../assets/ProfileImage.png"
 import { Mail, Phone, ExternalLink, Github, Linkedin, MessageCircle, Instagram } from 'lucide-react';
 
-export default function Footer() {
+
+
+function FadeInFooter(){
   return (
     <div className="py-30 md:py-40 bg-black text-white relative overflow-hidden">
-      
-      
-     
-
       {/* Main content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Profile section */}
@@ -82,4 +82,15 @@ export default function Footer() {
       </div>
     </div>
   );
+}
+
+
+export default function Footer() {
+  return(
+    <div className="bg-black">
+      <ScrollFadeIn>
+        <FadeInFooter />
+      </ScrollFadeIn>
+    </div>
+  )
 }
