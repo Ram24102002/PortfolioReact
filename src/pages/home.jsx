@@ -7,6 +7,7 @@ import ServicesSection from "../components/Home/ServicesSection";
 import ClientTestimonials from "../components/Home/ClientTestimonials";
 import ScrollFadeIn from "../Animations/ScrollFadeIn";
 import TestimonialsComponent from "../components/Home/TestimonialsComponent";
+import TechCarousel from "../components/Home/TechCarousel";
 
 function home() {
   return (
@@ -18,6 +19,8 @@ function home() {
         <Hero />
       </div>
       </ScrollFadeIn>
+
+      <TechCarousel />
 
       {/* Projects */}
       <ScrollFadeIn>

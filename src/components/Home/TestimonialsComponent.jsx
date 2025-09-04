@@ -143,7 +143,7 @@ const TestimonialsComponent = () => {
   return (
     <div className="bg-black text-white py-10 md:py-20 flex flex-col items-center justify-center p-4 md:p-8">
       {/* Header */}
-        <div className="mb-12 px-20 w-full">
+        <div className="mb-12 ml-50 px-20 w-full">
           <h1 className="text-5xl md:text-7xl font-bold text-white md:mb-2">Client's & Friends</h1>
           <h2 className="text-5xl md:text-7xl font-bold text-gray-600">Testimonial</h2>
         </div>
