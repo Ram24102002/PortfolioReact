@@ -20,8 +20,6 @@ function home() {
       </div>
       </ScrollFadeIn>
 
-      <TechCarousel />
-
       {/* Projects */}
       <ScrollFadeIn>
       <div>
@@ -43,6 +41,12 @@ function home() {
       <ScrollFadeIn>
       <div>
         <QuickTalk />
+      </div>
+      </ScrollFadeIn>
+
+      <ScrollFadeIn>
+      <div>
+        <TechCarousel />
       </div>
       </ScrollFadeIn>
 

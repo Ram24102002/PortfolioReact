@@ -29,12 +29,15 @@ const TechCarousel = () => {
   const duplicatedTechs = [...technologies, ...technologies];
 
   return (
-    <div className="min-h-screen bg-black flex flex-col items-center justify-center overflow-hidden">
+    <div className="py-20 mb-20 bg-black flex flex-col items-center justify-center overflow-hidden">
       
       {/* Header */}
-      <div className="w-full ml-100 mb-20">
-        <h1 className="text-8xl font-bold text-gray-300 mb-6 tracking-tight">
-          Tech Stack
+      <div className="w-full f p-5 md:ml-100 mb-10">
+        <h1 className="text-6xl md:text-8xl font-bold text-lime-400 tracking-tight">
+          Tech
+        </h1>
+        <h1 className="text-5xl md:text-8xl font-bold text-gray-300 mb-6 tracking-tight">
+          Stack
         </h1>
         
       </div>
@@ -51,7 +54,7 @@ const TechCarousel = () => {
           {duplicatedTechs.map((tech, index) => (
             <div
               key={index}
-              className="flex-shrink-0 flex flex-col items-center justify-center w-40 h-40 mx-30"
+              className="flex-shrink-0 flex flex-col items-center justify-center w-40 h-40  md:mx-30"
             >
               <img src={tech.icon} alt="" className='h-full' />
             </div>
