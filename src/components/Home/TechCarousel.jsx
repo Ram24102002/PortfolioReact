@@ -12,17 +12,17 @@ const TechCarousel = () => {
     { name: 'React', icon: ReactLogo },
     { name: 'JavaScript', icon: JSLogo },
     { name: 'HTML', icon: HTMLLogo },
-    { name: 'CSS', icon: CSSLogo },
     { name: 'Tailwind CSS', icon: TailwindLogo },
     { name: 'MongoDB', icon: MongoDBLogo },
     { name: 'Spring Boot', icon: SpringBootLogo },
     { name: 'Bootstrap', icon: BootstrapImg},
-    { name: 'Java', icon: '☕' },
-    { name: 'Git', icon: '📝' },
-    { name: 'GitHub', icon: '🐙' },
-    { name: 'MySQL', icon: '🐬' },
-    { name: 'Figma', icon: '🎨' },
-    { name: 'ChatGPT', icon: '🤖' }
+    { name: 'CSS', icon: CSSLogo },
+    // { name: 'Java', icon: '☕' },
+    // { name: 'Git', icon: '📝' },
+    // { name: 'GitHub', icon: '🐙' },
+    // { name: 'MySQL', icon: '🐬' },
+    // { name: 'Figma', icon: '🎨' },
+    // { name: 'ChatGPT', icon: '🤖' }
   ];
 
   // Duplicate the array for seamless looping
