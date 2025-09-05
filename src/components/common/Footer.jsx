@@ -8,7 +8,7 @@ import { Mail, Phone, ExternalLink, Github, Linkedin, MessageCircle, Instagram }
 
 function FadeInFooter(){
   return (
-    <div className="py-30 md:py-40 bg-black text-white relative overflow-hidden">
+    <div className="py-30 md:py-40 bg-black text-white relative overflow-hidden" id="Footer">
       {/* Main content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Profile section */}

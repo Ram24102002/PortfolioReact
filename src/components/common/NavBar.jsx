@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [activeItem, setActiveItem] = useState("");
 
   const navItems = [
-    { name: "About", href: "#about" },
-    { name: "Work", href: "#work" },
-    { name: "Blog", href: "#blog" },
+    { name: "About", href: "/" },
+    { name: "Work", href: "#Projects" },
+    { name: "My Services", href: "#MyServices" },
   ];
 
   const [time, setTime] = useState("");
@@ -60,9 +61,11 @@ export default function Navbar() {
             </div>
 
             {/* Contact Button */}
-            <button className="bg-zinc-800 hover:bg-lime-400 text-zinc-400 hover:text-black px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 text-align-center">
+            <a href="#Footer">
+              <button className="bg-zinc-800 hover:bg-lime-400 text-zinc-400 hover:text-black px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 text-align-center">
               Contact me
             </button>
+            </a>
           </div>
         </div>
       </div>

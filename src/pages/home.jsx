@@ -22,7 +22,7 @@ function home() {
 
       {/* Projects */}
       <ScrollFadeIn>
-      <div>
+      <div id="Projects">
         <Projects />
       </div>
       </ScrollFadeIn>
@@ -51,7 +51,11 @@ function home() {
       </ScrollFadeIn>
 
       {/* Services Section */}
-      <ServicesSection />
+      <ScrollFadeIn>
+      <div id="MyServices">
+        <ServicesSection />
+      </div>
+      </ScrollFadeIn>
 
       {/* People I Worked With */}
       <ScrollFadeIn>
