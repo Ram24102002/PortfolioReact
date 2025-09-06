@@ -6,23 +6,29 @@ import MongoDBLogo from '../../assets/TechStackLogo/MongoDB.png'
 import CSSLogo from '../../assets/TechStackLogo/CSS.png'
 import SpringBootLogo from '../../assets/TechStackLogo/SpringBoot.png'
 import BootstrapImg from '../../assets/TechStackLogo/BootstrapImg.png'
+import JavaLogoImg from '../../assets/TechStackLogo/JavaLogo.png'
+import GitLogoImg from '../../assets/TechStackLogo/Git.png'
+import GitHubImg from '../../assets/TechStackLogo/Github.png'
+import FigmaLogoImg from '../../assets/TechStackLogo/FigmaLogo.png'
+import MySqlImg from '../../assets/TechStackLogo/MySql.png'
+import AiImg from '../../assets/TechStackLogo/Ai.png'
 
 const TechCarousel = () => {
   const technologies = [
-    { name: 'React', icon: ReactLogo },
     { name: 'JavaScript', icon: JSLogo },
     { name: 'HTML', icon: HTMLLogo },
+    { name: 'GitHub', icon: GitHubImg },
     { name: 'Tailwind CSS', icon: TailwindLogo },
+    { name: 'React', icon: ReactLogo },
     { name: 'MongoDB', icon: MongoDBLogo },
+    { name: 'ChatGPT', icon: AiImg },
     { name: 'Spring Boot', icon: SpringBootLogo },
     { name: 'Bootstrap', icon: BootstrapImg},
     { name: 'CSS', icon: CSSLogo },
-    // { name: 'Java', icon: '☕' },
-    // { name: 'Git', icon: '📝' },
-    // { name: 'GitHub', icon: '🐙' },
-    // { name: 'MySQL', icon: '🐬' },
-    // { name: 'Figma', icon: '🎨' },
-    // { name: 'ChatGPT', icon: '🤖' }
+    { name: 'Java', icon: JavaLogoImg },
+    { name: 'Git', icon: GitLogoImg },
+    { name: 'MySQL', icon: MySqlImg },
+    { name: 'Figma', icon: FigmaLogoImg },
   ];
 
   // Duplicate the array for seamless looping
@@ -54,7 +60,7 @@ const TechCarousel = () => {
           {duplicatedTechs.map((tech, index) => (
             <div
               key={index}
-              className="flex-shrink-0 flex flex-col items-center justify-center w-40 h-40  md:mx-30"
+              className="flex-shrink-0 flex flex-col items-center justify-center w-40 h-40  md:mx-20"
             >
               <img src={tech.icon} alt="" className='h-full' />
             </div>
