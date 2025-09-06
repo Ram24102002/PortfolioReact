@@ -16,19 +16,19 @@ import AiImg from '../../assets/TechStackLogo/Ai.png'
 const TechCarousel = () => {
   const technologies = [
     { name: 'JavaScript', icon: JSLogo },
-    { name: 'HTML', icon: HTMLLogo },
-    { name: 'GitHub', icon: GitHubImg },
+    { name: 'MySQL', icon: MySqlImg },
+    { name: 'Java', icon: JavaLogoImg },
+    { name: 'Git', icon: GitLogoImg },
     { name: 'Tailwind CSS', icon: TailwindLogo },
     { name: 'React', icon: ReactLogo },
+    { name: 'Figma', icon: FigmaLogoImg },
+    { name: 'GitHub', icon: GitHubImg },
+    { name: 'HTML', icon: HTMLLogo },
     { name: 'MongoDB', icon: MongoDBLogo },
-    { name: 'ChatGPT', icon: AiImg },
+    { name: 'Ai Tools', icon: AiImg },
     { name: 'Spring Boot', icon: SpringBootLogo },
     { name: 'Bootstrap', icon: BootstrapImg},
     { name: 'CSS', icon: CSSLogo },
-    { name: 'Java', icon: JavaLogoImg },
-    { name: 'Git', icon: GitLogoImg },
-    { name: 'MySQL', icon: MySqlImg },
-    { name: 'Figma', icon: FigmaLogoImg },
   ];
 
   // Duplicate the array for seamless looping
