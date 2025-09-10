@@ -60,8 +60,8 @@ function Hero() {
           </h2>
 
           {/* Description */}
-          <p className="text-lg px-3 animate-fade-in md:text-xl text-gray-400 max-w-2xl leading-relaxed mt-8">
-            With 2 years of experience in web design, I specialize in crafting
+          <p className="text-lg px-3 animate-fade-in md:text-xl text-gray-400 max-w-3xl leading-relaxed mt-8">
+            With 2 years of freelance and internship experience in Web-Development,<br /> I specialize in crafting
             visually stunning, user-friendly, and high-converting websites.
           </p>
         </div>
