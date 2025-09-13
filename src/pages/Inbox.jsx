@@ -11,7 +11,8 @@ export default function Inbox() {
   const [searchTerm, setSearchTerm] = useState("");
   
   useEffect(() => {
-    fetch("http://localhost:5000/api/inbox")
+    console.log("API POART = ",import.meta.env.VITE_API_URL)
+    fetch(`${import.meta.env.VITE_API_URL}/api/inbox`)
   .then(res => res.json())
   .then(data => {
   console.log(data);
