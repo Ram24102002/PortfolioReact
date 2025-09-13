@@ -69,7 +69,7 @@ export default function Inbox() {
   onChange={(e) => setSearchTerm(e.target.value)}
               type="text"
               placeholder="Search messages"
-              className="bg-gray-900 text-white pl-10 pr-4 py-2 rounded-md border border-gray-700 focus:border-gray-500 focus:outline-none w-full"
+              className="bg-black text-white pl-10 pr-4 py-2 rounded-md border border-gray-700 focus:border-gray-500 focus:outline-none w-full"
             />
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function Inbox() {
             <div
               key={msg.id}
               className={`p-4 border-b border-gray-800 cursor-pointer transition-colors hover:bg-gray-900 ${
-                selectedMessage?.id === msg.id ? 'bg-gray-900 border-r-2 border-r-white' : ''
+                selectedMessage?.id === msg.id ? 'bg-black border-r-2 border-r-white' : ''
               }`}
               onClick={() => markAsRead(msg)}
             >
