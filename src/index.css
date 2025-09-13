@@ -1,5 +1,38 @@
 @import "tailwindcss";
 
+/* global.css*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@media only screen and (min-width: 1000px) {
+  /* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 0px;
+    
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+}
+
+
 
 html {
   scroll-behavior: smooth;

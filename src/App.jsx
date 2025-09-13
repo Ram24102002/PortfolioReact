@@ -12,32 +12,36 @@ import Home from "./pages/home";
 import PageNotFound from "./pages/PageNotFound";
 import Footer from "./components/common/Footer";
 import GetInTouch from "./pages/GetInTouch";
+import Inbox from "./pages/Inbox";
 
 
 
 
 function AppContent(){
   const location = useLocation();
-  const hideLayoutRoutes = ['/get-in-touch'];
+  const hideLayoutNav = ['/get-in-touch','/temp','/inbox'];//Remove Nav
+  const hideLayoutFooter = ['/get-in-touch','/inbox','/temp'];//Remove Footer
 
-  const shouldHideLayout = hideLayoutRoutes.includes(location.pathname);
+  const shouldHideLayoutNav = hideLayoutNav.includes(location.pathname);
+  const shouldHideLayoutFooter = hideLayoutFooter.includes(location.pathname);
 
 return(
 <>
 
-  {!shouldHideLayout &&  <Navbar />}
+  {!shouldHideLayoutNav &&  <Navbar />}
 
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/temp" elament={<Temp />} />
         <Route path="/get-in-touch" element={<GetInTouch />} />
+        <Route path="/inbox" element={<Inbox />} />
 
         {/* other routes */}
       <Route path="*" element={<PageNotFound />} />
       </Routes>
       
-  {!shouldHideLayout &&  <Footer />}
+  {!shouldHideLayoutFooter &&  <Footer />}
 </>
 )
   

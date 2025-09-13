@@ -1,35 +1,53 @@
-import { useEffect, useRef, useState } from "react";
 
-export default function temp() {
-  const ref = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+import React, { useState } from "react";
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target); // fade in only once
-        }
-      },
-      { threshold: 0.1 } // trigger when 10% is visible
+const initialMessages = [
+  { id: 1, sender: "Alice", subject: "Meeting tomorrow", read: false },
+  { id: 2, sender: "Bob", subject: "Project update", read: true },
+  { id: 3, sender: "Charlie", subject: "Hello!", read: false },
+];
+
+const temp = () => {
+  const [messages, setMessages] = useState(initialMessages);
+
+  const toggleRead = (id) => {
+    setMessages((prev) =>
+      prev.map((msg) =>
+        msg.id === id ? { ...msg, read: !msg.read } : msg
+      )
     );
-
-    if (ref.current) observer.observe(ref.current);
-
-    return () => {
-      if (ref.current) observer.unobserve(ref.current);
-    };
-  }, []);
+  };
 
   return (
-    <p
-      ref={ref}
-      className={`transition-opacity duration-1000 ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}
-    >
-      I will fade in when I enter the screen 👋
-    </p>
+    <div className="min-h-screen bg-black text-white p-6">
+      <h1 className="text-3xl font-bold mb-6">Inbox</h1>
+      <div className="space-y-4">
+        {messages.map((msg) => (
+          <div
+            key={msg.id}
+            className={`flex justify-between items-center p-4 border rounded-md ${
+              msg.read ? "bg-gray-800" : "bg-gray-900"
+            }`}
+          >
+            <div>
+              <p className="font-semibold">{msg.sender}</p>
+              <p className="text-gray-300">{msg.subject}</p>
+            </div>
+            <button
+              onClick={() => toggleRead(msg.id)}
+              className={`px-3 py-1 rounded-md text-sm ${
+                msg.read
+                  ? "bg-green-600 hover:bg-green-700"
+                  : "bg-red-600 hover:bg-red-700"
+              }`}
+            >
+              {msg.read ? "Read" : "Unread"}
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
   );
-}
+};
+
+export default temp;
