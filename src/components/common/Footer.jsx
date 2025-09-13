@@ -79,7 +79,7 @@ function FadeInFooter(){
       {/* Footer */}
       <div className="absolute bottom-6 left-6 right-6 flex justify-between items-center text-gray-500 text-sm">
         <div>
-          Designed using <span className="text-gray-300">React</span> By <span className="text-gray-300">Ram</span>
+          Designed using <span className="text-gray-300">React</span> By <Link to={'/inbox'}><span className="text-gray-300">Ram</span></Link>
         </div>
         <div>
           © Copyright 2025
