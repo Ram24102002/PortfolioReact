@@ -32,6 +32,15 @@
 }
 }
 
+::selection {
+  background-color: #0dff00;
+  color: #000000;
+}
+::-moz-selection{
+  background-color: #0dff00;
+  color: #000000;
+}
+
 
 
 html {
