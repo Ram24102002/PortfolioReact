@@ -11,6 +11,9 @@ const TestimonialsComponent = () => {
   const [isScrolling, setIsScrolling] = useState(false);
   const scrollTimeoutRef = useRef(null);
 
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
+
   const testimonials = [
     {
       id: 1,
@@ -98,37 +101,57 @@ const TestimonialsComponent = () => {
     );
   };
 
+  // Handle trackpad/mouse wheel scroll
   const handleWheel = (e) => {
     e.preventDefault();
-    
-    // Prevent multiple rapid scroll events
+
     if (isScrolling) return;
-    
     setIsScrolling(true);
-    
-    // Clear existing timeout
+
     if (scrollTimeoutRef.current) {
       clearTimeout(scrollTimeoutRef.current);
     }
-    
-    // Only respond to significant scroll movements
-    const scrollThreshold = 50;
-    
-    if (Math.abs(e.deltaY) > scrollThreshold || Math.abs(e.deltaX) > scrollThreshold) {
-      // Determine scroll direction - treat vertical scroll as horizontal navigation
-      if (e.deltaY > 0 || e.deltaX > 0) {
-        // Scrolling down or right - move to next
+
+    const scrollThreshold = 30;
+
+    if (Math.abs(e.deltaX) > scrollThreshold) {
+      if (e.deltaX > 0) {
         nextTestimonial();
-      } else if (e.deltaY < 0 || e.deltaX < 0) {
-        // Scrolling up or left - move to previous
+      } else {
         prevTestimonial();
       }
     }
-    
-    // Reset scrolling flag after a delay
+
     scrollTimeoutRef.current = setTimeout(() => {
       setIsScrolling(false);
-    }, 500);
+    }, 400);
+  };
+
+  // Touch swipe for mobile
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    const swipeThreshold = 50; // px threshold
+    if (!touchStartX || !touchEndX) return;
+
+    const distance = touchStartX - touchEndX;
+
+    if (Math.abs(distance) > swipeThreshold) {
+      if (distance > 0) {
+        nextTestimonial(); // swipe left → next
+      } else {
+        prevTestimonial(); // swipe right → prev
+      }
+    }
+
+    setTouchStartX(0);
+    setTouchEndX(0);
   };
 
   // Cleanup timeout on unmount
@@ -143,10 +166,11 @@ const TestimonialsComponent = () => {
   return (
     <div className="bg-black text-white py-10 md:py-20 flex flex-col items-center justify-center p-4 md:p-8">
       {/* Header */}
-        <div className="mb-12 mg:ml-50 md:px-20 w-full">
-          <h1 className="text-4xl md:text-7xl font-bold text-white md:mb-2">Client's & Friends</h1>
-          <h2 className="text-5xl md:text-7xl font-bold text-gray-600">Testimonial</h2>
-        </div>
+      <div className="mb-12 mg:ml-50 md:px-20 w-full">
+        <h1 className="text-4xl md:text-7xl font-bold text-white md:mb-2">Client's & Friends</h1>
+        <h2 className="text-5xl md:text-7xl font-bold text-gray-600">Testimonial</h2>
+      </div>
+
       <div className="max-w-7xl w-full relative">
         {/* Navigation Arrow Left */}
         <button
@@ -159,7 +183,10 @@ const TestimonialsComponent = () => {
         {/* Testimonials Container */}
         <div 
           className="overflow-hidden px-4 md:px-8 lg:px-12 cursor-grab active:cursor-grabbing"
-          onWheel={handleWheel}
+          onWheel={handleWheel}              // desktop trackpad
+          onTouchStart={handleTouchStart}    // mobile start
+          onTouchMove={handleTouchMove}      // mobile move
+          onTouchEnd={handleTouchEnd}        // mobile end
           style={{ userSelect: 'none' }}
         >
           <div 
@@ -169,7 +196,7 @@ const TestimonialsComponent = () => {
               gap: isMobile ? '0rem' : isTablet ? '1rem' : '1.5rem'
             }}
           >
-            {testimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial) => (
               <div key={testimonial.id} className={`flex-shrink-0 ${
                 isMobile ? 'w-full px-2' : isTablet ? 'w-1/2 px-2' : 'w-1/3 px-3'
               }`}>
@@ -240,12 +267,11 @@ const TestimonialsComponent = () => {
           </p>
         </div>
         
-     {/* Left fade */}
-  <div className="pointer-events-none absolute left-0 top-0 h-full w-15 bg-gradient-to-r from-black to-transparent"></div>
+        {/* Left fade */}
+        <div className="pointer-events-none absolute left-0 top-0 h-full w-15 bg-gradient-to-r from-black to-transparent"></div>
 
-  {/* Right fade */}
-  <div className="pointer-events-none absolute right-0 top-0 h-full w-15 bg-gradient-to-l from-black to-transparent"></div>
-
+        {/* Right fade */}
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-15 bg-gradient-to-l from-black to-transparent"></div>
       </div>
     </div>
   );
