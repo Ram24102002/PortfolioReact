@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink } from 'lucide-react';
 import AsanPage from '../../assets/ProjectImages/Asandevnest.png'
-import VoidPage from '../../assets/ProjectImages/voidPage.png'
+import VoidPage from '../../assets/ProjectImages/voidDesktop.png'
+import PortDesktop from '../../assets/ProjectImages/PortDesktop.png'
 
 const Projects = () => {
   const projects = [
@@ -19,6 +20,13 @@ const Projects = () => {
       description: "Fashion E-commerce Website",
       image: VoidPage,
       link: "https://void-fashion.onrender.com/"
+    },
+    {
+      id: 3,
+      title: "Portfolio",
+      description: "MERN Stack Developer Portfolio Website with Responsive Design and Interactive Features.",
+      image: PortDesktop,
+      projectLink: "https://portfolio-react-azure-kappa.vercel.app/"
     }
   ];
 
@@ -27,12 +35,12 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-5xl md:text-7xl font-bold text-white md:mb-2">RECENT</h1>
+          <h1 className="text-5xl md:text-7xl font-bold text-white md:mb-2">View</h1>
           <h2 className="text-5xl md:text-7xl font-bold text-gray-600">PROJECTS</h2>
         </div>
 
         {/* Projects Grid */}
-        <div className="space-y-8">
+        <div className="space-y-8 grid md:grid-cols-2">
           {projects.map((project) => (
             <Link to={project.link} target='_blank'>
             <div 

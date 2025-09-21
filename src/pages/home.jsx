@@ -8,6 +8,7 @@ import ClientTestimonials from "../components/Home/ClientTestimonials";
 import ScrollFadeIn from "../Animations/ScrollFadeIn";
 import TestimonialsComponent from "../components/Home/TestimonialsComponent";
 import TechCarousel from "../components/Home/TechCarousel";
+import ProjectsWithModel from "../components/Home/ProjectsWithModel";
 
 function home() {
   return (
@@ -19,6 +20,13 @@ function home() {
         <Hero />
       </div>
       </ScrollFadeIn>
+
+      {/* ProjectsWithModel */}
+      {/* <ScrollFadeIn> */}
+      <div id="ProjectsWithModel">
+        <ProjectsWithModel />
+      </div>
+      {/* </ScrollFadeIn> */}
 
       {/* Projects */}
       <ScrollFadeIn>

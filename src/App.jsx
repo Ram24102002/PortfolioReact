@@ -13,43 +13,35 @@ import PageNotFound from "./pages/PageNotFound";
 import Footer from "./components/common/Footer";
 import GetInTouch from "./pages/GetInTouch";
 import Inbox from "./pages/Inbox";
+import Sample from "./pages/sample";
 
-
-
-
-function AppContent(){
+function AppContent() {
   const location = useLocation();
-  const hideLayoutNav = ['/get-in-touch','/temp','/inbox'];//Remove Nav
-  const hideLayoutFooter = ['/get-in-touch','/inbox','/temp'];//Remove Footer
+  const hideLayoutNav = ["/get-in-touch", "/temp", "/inbox"]; // Remove Nav
+  const hideLayoutFooter = ["/get-in-touch", "/inbox", "/temp"]; // Remove Footer
 
   const shouldHideLayoutNav = hideLayoutNav.includes(location.pathname);
   const shouldHideLayoutFooter = hideLayoutFooter.includes(location.pathname);
 
-return(
-<>
-
-  {!shouldHideLayoutNav &&  <Navbar />}
-
+  return (
+    <>
+      {!shouldHideLayoutNav && <Navbar />}
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/temp" elament={<Temp />} />
+        <Route path="/temp" element={<Temp />} />
+        <Route path="/sample" element={<Sample />} />
         <Route path="/get-in-touch" element={<GetInTouch />} />
         <Route path="/inbox" element={<Inbox />} />
 
-        {/* other routes */}
-      <Route path="*" element={<PageNotFound />} />
+        {/* catch-all route */}
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
-      
-  {!shouldHideLayoutFooter &&  <Footer />}
-</>
-)
-  
 
-
-
+      {!shouldHideLayoutFooter && <Footer />}
+    </>
+  );
 }
-
 
 function App() {
   return (
