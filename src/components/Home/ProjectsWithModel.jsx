@@ -22,7 +22,7 @@ function ProjectsWithModel() {
           id: 1,
           title: "Asan Dev Nest",
           logo: AsanLogo,
-          description: "Worked with Asan Dev Nest as a Frontend Developer Intern to build and maintain web applications using React.js, Tailwind, HTML, CSS, and JavaScript.",
+          description: "Worked with Asan Dev Nest as one of the Frontend Developer Intern to build and maintain web applications using React.js, Tailwind, HTML, CSS, and JavaScript.",
           mobileImage: AsandevnestMobile,
           desktopImage: AsanPage,
           Completed: true,
@@ -83,7 +83,7 @@ function ProjectsWithModel() {
                 </p>
     
                 <Link to={project.projectLink} target='_blank'>
-                    <button className="bg-lime-400  w-full px-8 py-4 rounded-xl  font-medium hover:bg-lime-200  transition-colors shadow-sm">
+                    <button className="bg-lime-400 text-black  w-full px-8 py-4 rounded-xl  font-medium hover:bg-lime-200  transition-colors shadow-sm">
                         Visite the Project
                     </button>
                 </Link>
