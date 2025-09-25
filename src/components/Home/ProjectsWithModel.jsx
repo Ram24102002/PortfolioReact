@@ -65,7 +65,7 @@ function ProjectsWithModel() {
         <ScrollFadeIn><div className="min-h-screen bg-black" key={project.id}>
           <div className="flex flex-col md:flex-row">
             {/* Left Side - Main Content */}
-            <div className="w-full md:w-1/3 p-12  pb-0">
+            <div className="w-full md:w-1/3 p-12 pb-0 flex justify-center items-center">
               {/* Logo */}
               <div className="mb-16">
                 <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-400 to-yellow-500 flex items-center justify-center flex-shrink-0">
@@ -93,31 +93,32 @@ function ProjectsWithModel() {
             {/* Right Side - App Interfaces */}
             <div className="w-full md:w-2/3 sm:h-[50dvh] md:h-[100dvh] p-8 flex items-center justify-center relative">
     
-            
-              {/* Mobile Phone */}
+               <div className='flex items-center justify-center relative'>
+                  {/* Mobile Phone */}
               
-              <div className='w-1/3 flex flex-col items-center justify-center md:mr-[-90px] z-10 md:mt-30'>
-                  <div className='h-95 w-45 border-4 border-white rounded-3xl shadow-xl overflow-hidden mb-8'>
-                    <Link to={project.projectLink}  target='_blank'>
-                      <img src={project.mobileImage} className='object-cover' alt="" />
-                    </Link>
-                  </div>
-              </div>
+                      <div className=' flex flex-col items-center justify-center md:mr-[-20px] z-10 md:mt-40'>
+                          <div className='h-95 w-45 border-4 border-white rounded-3xl shadow-xl overflow-hidden mb-8'>
+                            <Link to={project.projectLink}  target='_blank'>
+                              <img src={project.mobileImage} className='object-cover' alt="" />
+                            </Link>
+                          </div>
+                      </div>
               
-    
-    
-              {/* Desktop Browser Window */}
+                      
+                      {/* Desktop Browser Window */}
+                      
+                      <div className="mockup-browser bg-white border-base-300 border hidden md:block w-150 ">
+                        <div className="mockup-browser-toolbar p-2">
+                          <div className="input">{project.projectLink}</div>
+                        </div>
+                        <div className="grid place-content-center border-t border-base-300 h-50 md:h-80 ">
+                          <Link to={project.projectLink} target='_blank'>
+                          <img src={project.desktopImage}  className=' py-5'  alt="" />
+                          </Link>
+                        </div>
+                      </div>
+               </div>
               
-              <div className="mockup-browser bg-white border-base-300 border hidden md:block md:w-2/3 ">
-      <div className="mockup-browser-toolbar p-2">
-        <div className="input">{project.projectLink}</div>
-      </div>
-      <div className="grid place-content-center border-t border-base-300 h-50 md:h-80 ">
-        <Link to={project.projectLink} target='_blank'>
-        <img src={project.desktopImage}  className=' py-5'  alt="" />
-        </Link>
-      </div>
-    </div>
     
             </div>
           </div>
