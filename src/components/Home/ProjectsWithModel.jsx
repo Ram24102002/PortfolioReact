@@ -54,7 +54,7 @@ function ProjectsWithModel() {
     <div>
         {/* Header */}
         <ScrollFadeIn>
-        <div className="ml-4 mt-20 mb-12">
+        <div className="ml-4 md:ml-15 mt-20 mb-12">
           <h1 className="text-5xl md:text-7xl font-bold text-white md:mb-2">RECENT</h1>
           <h2 className="text-5xl md:text-7xl font-bold text-gray-600">PROJECTS</h2>
         </div>

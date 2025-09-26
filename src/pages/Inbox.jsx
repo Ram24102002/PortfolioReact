@@ -17,18 +17,18 @@ export default function Inbox() {
       .catch((err) => console.error("Error:", err));
   }, []);
 
-  // Toggle read/unread
-  const toggleRead = async (msg) => {
-    try {
-      const updatedRead = !msg.read;
 
-      // Call backend
+
+  const markAsRead = async (msg) => {
+  try {
+    // only update if not already read
+    if (msg.read === false) {
       const res = await fetch(
         `${import.meta.env.VITE_API_URL}/api/inbox/${msg._id}/read`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ read: updatedRead }),
+          body: JSON.stringify({ read: true }),
         }
       );
 
@@ -36,16 +36,22 @@ export default function Inbox() {
 
       const updatedMsg = await res.json();
 
-      // Update frontend state
+      // Update state
       setMessages((prev) =>
         prev.map((m) => (m._id === updatedMsg._id ? updatedMsg : m))
       );
-
-      if (selectedMessage?._id === updatedMsg._id) setSelectedMessage(updatedMsg);
-    } catch (err) {
-      console.error("Error updating read status:", err);
+      setSelectedMessage(updatedMsg); // show on right panel
+    } else {
+      // already read → just open it
+      setSelectedMessage(msg);
     }
-  };
+  } catch (err) {
+    console.error("Error marking as read:", err);
+  }
+};
+
+  
+  
 
   // Toggle star/unstar
   const toggleStar = (id) => {
@@ -99,7 +105,10 @@ export default function Inbox() {
                   ? "bg-black border-r-2 border-r-white"
                   : ""
               }`}
-              onClick={() => toggleRead(msg)} // 🔹 Updated to call toggleRead
+              onClick={() =>{ 
+                markAsRead(msg);
+                setSelectedMessage(msg); // open in right panel
+              }} 
             >
               <div className="flex items-start justify-between">
                 <div className="flex-1 min-w-0">
