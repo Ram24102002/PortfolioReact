@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Star, ArrowLeft, MoreVertical, Search, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import bottomImg from "../assets/bottomImg.png";
+import { notifyTostFun } from "../utils/notifyTostFun";
 
 export default function Inbox() {
   const [messages, setMessages] = useState([]);
@@ -41,12 +42,15 @@ export default function Inbox() {
         prev.map((m) => (m._id === updatedMsg._id ? updatedMsg : m))
       );
       setSelectedMessage(updatedMsg); // show on right panel
+      // 🎉 show success toast
+      notifyTostFun("Read status updated ✅", "#11c011ff");
     } else {
       // already read → just open it
       setSelectedMessage(msg);
     }
   } catch (err) {
     console.error("Error marking as read:", err);
+    notifyTostFun("Error updating Read status","#b80707ff");
   }
 };
 
@@ -79,7 +83,7 @@ export default function Inbox() {
                       }
                     );
 
-                    if (!res.ok) throw new Error("Failed to update read status");
+                    if (!res.ok) throw new Error("Failed to update Stared status");
 
                     const updatedMsg = await res.json();
 
@@ -90,8 +94,11 @@ export default function Inbox() {
                       )
                     );
                     setSelectedMessage(updatedMsg);
+                    // 🎉 show success toast
+                    notifyTostFun("Starred status updated ✅", "#11c011ff");
                   } catch (err) {
-                    console.error("Error updating read status:", err);
+                    console.error("Error updating Stared status:", err);
+                    notifyTostFun("Error updating ⭐ status","#b80707ff");
                   }
                 }
 
@@ -286,8 +293,11 @@ export default function Inbox() {
                       )
                     );
                     setSelectedMessage(updatedMsg);
+                    // 🎉 show success toast
+                    notifyTostFun("Read status updated ✅", "#11c011ff");
                   } catch (err) {
                     console.error("Error updating read status:", err);
+                    notifyTostFun("Error updating Read status","#b80707ff");
                   }
                 }}
                 className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded text-sm transition-colors"
