@@ -63,11 +63,48 @@ export default function Inbox() {
     }
   };
 
+
+
+  const staredApi = async (msg) => {
+                  try {
+                    const updated = !selectedMessage.stared;
+
+                    // Call backend
+                    const res = await fetch(
+                      `${import.meta.env.VITE_API_URL}/api/inbox/${selectedMessage._id}/stared`,
+                      {
+                        method: "PATCH",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ stared: updated }),
+                      }
+                    );
+
+                    if (!res.ok) throw new Error("Failed to update read status");
+
+                    const updatedMsg = await res.json();
+
+                    // Update frontend state
+                    setMessages((prev) =>
+                      prev.map((m) =>
+                        m._id === updatedMsg._id ? updatedMsg : m
+                      )
+                    );
+                    setSelectedMessage(updatedMsg);
+                  } catch (err) {
+                    console.error("Error updating read status:", err);
+                  }
+                }
+
+
+
   // Filter messages by search
   const filteredMessages =
     messages?.filter((msg) =>
       msg.name.toLowerCase().includes(searchTerm.toLowerCase())
     ) || [];
+
+  const filteredStaredMessages =
+    messages?.filter((msg) => msg.stared) || [];
 
   return (
     <div className="max-h-screen md:max-h-screen bg-black text-white flex flex-col-reverse md:flex-row overflow-hidden">
@@ -83,15 +120,24 @@ export default function Inbox() {
             </Link>
             <h1 className="text-2xl text-lime-400 mb-4">Inbox</h1>
           </div>
-          <div className="relative">
+          <div className="relative flex items-center space-x-2 ">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
             <input
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               type="text"
               placeholder="Search messages"
-              className="bg-black text-white pl-10 pr-4 py-2 rounded-md border border-gray-700 focus:border-gray-500 focus:outline-none w-full"
+              className="bg-black text-white pl-10 pr-4 py-2 rounded-md border border-gray-700 focus:border-gray-500 focus:outline-none w-9/10"
             />
+            {/* <Star
+                    onClick={(e) => {
+                      // filteredStaredMessages(e);
+                      markAsRead(msg);
+                toggleStar(selectedMessage._id);
+              }}
+              // onChange={(e) => filteredStaredMessages(e.target.value)}
+                    className={`w-4 h-4 m-3 fill-yellow-400 text-yellow-400`}
+                  /> */}
           </div>
         </div>
 
@@ -141,10 +187,14 @@ export default function Inbox() {
                   className="ml-2 p-1 hover:bg-gray-800 rounded"
                 >
                   <Star
+                    onClick={() => {
+                      markAsRead(msg);
+                toggleStar(selectedMessage._id)
+              }}
                     className={`w-4 h-4 ${
-                      msg.isStarred
+                      msg.stared
                         ? "fill-yellow-400 text-yellow-400"
-                        : "text-gray-500"
+                        : "hidden"
                     }`}
                   />
                 </button>
@@ -170,15 +220,19 @@ export default function Inbox() {
 
                 <div className="flex items-center space-x-2">
                   <button
-                    onClick={() => toggleStar(selectedMessage._id)}
+                    onClick={() => {toggleStar(selectedMessage._id)
+                      staredApi(selectedMessage._id)}
+                    }
                     className="p-2 hover:bg-gray-800 rounded"
                   >
                     <Star
-                      className={`w-4 h-4 ${
-                        selectedMessage.isStarred
+                    className={`w-4 h-4 ${
+                        selectedMessage.stared
                           ? "fill-yellow-400 text-yellow-400"
                           : "text-gray-500"
                       }`}
+                    // onClick={() => }
+                      
                     />
                   </button>
                   <button className="p-2 hover:bg-gray-800 rounded">
