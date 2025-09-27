@@ -75,7 +75,7 @@ function Hero() {
             <Zap />Get In Touch
           </button>
           </Link>
-          <a href="https://drive.google.com/file/d/1at0UtzIrdacFqeUjQ__ZkYR5-f22lvdE/view?usp=drive_link" target="_blank">
+          <a href="https://drive.google.com/file/d/1H2SSq1NlwFqbbn1pGf-baIAUz7MLCk-2/view?usp=sharing" target="_blank">
             <button className="bg-white text-black text-center flex justify-center  px-8 py-3 w-full md:w-50 rounded-lg font-medium flex hover:bg-lime-100  transition-colors duration-200">
             View My CV
             <Paperclip />
