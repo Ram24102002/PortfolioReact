@@ -43,7 +43,7 @@ export default function Inbox() {
       );
       setSelectedMessage(updatedMsg); // show on right panel
       // 🎉 show success toast
-      notifyTostFun("Read status updated ✅", "#11c011ff");
+      // notifyTostFun("Read status updated ✅", "#11c011ff");
     } else {
       // already read → just open it
       setSelectedMessage(msg);
