@@ -46,7 +46,6 @@ export default function Inbox() {
       // 🎉 show success toast
       // notifyTostFun("Read status updated ✅", "#11c011ff");
     } else {
-      // already read → just open it
       setSelectedMessage(msg);
     }
   } catch (err) {
@@ -241,7 +240,7 @@ const filteredMessages =
                     className="p-2 hover:bg-gray-800 rounded"
                   >
                     <Star
-                    className={`w-4 h-4 ${
+                    className={`w-5 h-5 ${
                         selectedMessage.stared
                           ? "fill-yellow-400 text-yellow-400"
                           : "text-gray-500"
