@@ -8,7 +8,8 @@ import { notifyTostFun } from "../utils/notifyTostFun";
 export default function Inbox() {
   const [messages, setMessages] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedMessage, setSelectedMessage] = useState(null);
+  const [selectedMessage, setSelectedMessage] = useState(null); 
+  const [showStarredOnly, setShowStarredOnly] = useState(false);
 
   // Fetch inbox messages
   useEffect(() => {
@@ -104,17 +105,21 @@ export default function Inbox() {
 
 
 
-  // Filter messages by search
-  const filteredMessages =
-    messages?.filter((msg) =>
-      msg.name.toLowerCase().includes(searchTerm.toLowerCase())
-    ) || [];
 
-  const filteredStaredMessages =
-    messages?.filter((msg) => msg.stared) || [];
+
+// Filter messages by search and starred toggle
+const filteredMessages =
+  messages?.filter((msg) => {
+    const matchesSearch = msg.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    const matchesStarred = showStarredOnly ? msg.stared : true;
+    return matchesSearch && matchesStarred;
+  }) || [];
+
 
   return (
-    <div className="max-h-screen md:max-h-screen bg-black text-white flex flex-col-reverse md:flex-row overflow-hidden">
+    <div className="min-h-screen md:max-h-screen bg-black text-white flex flex-col-reverse md:flex-row overflow-hidden">
       {/* Left Panel */}
       <div className="w-full md:w-1/2 max-h-[50vh] md:max-h-screen border-r border-gray-800 flex flex-col">
         {/* Header */}
@@ -136,15 +141,18 @@ export default function Inbox() {
               placeholder="Search messages"
               className="bg-black text-white pl-10 pr-4 py-2 rounded-md border border-gray-700 focus:border-gray-500 focus:outline-none w-9/10"
             />
-            {/* <Star
-                    onClick={(e) => {
-                      // filteredStaredMessages(e);
-                      markAsRead(msg);
+            <Star
+                    onClick={() => {  
+                      //  markAsRead(msg);
                 toggleStar(selectedMessage._id);
+                setShowStarredOnly((prev) => !prev)
               }}
-              // onChange={(e) => filteredStaredMessages(e.target.value)}
-                    className={`w-4 h-4 m-3 fill-yellow-400 text-yellow-400`}
-                  /> */}
+              className={`w-6 h-6 m-3 cursor-pointer ${
+    showStarredOnly
+      ? "fill-yellow-400 text-yellow-400"
+      : "text-gray-500"
+  }`}
+                  />
           </div>
         </div>
 
@@ -191,7 +199,7 @@ export default function Inbox() {
                     e.stopPropagation();
                     toggleStar(msg._id);
                   }}
-                  className="ml-2 p-1 hover:bg-gray-800 rounded"
+                  className="ml-2 p-1  rounded"
                 >
                   <Star
                     onClick={() => {
