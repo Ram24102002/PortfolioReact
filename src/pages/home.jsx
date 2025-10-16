@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Hero from "../components/Home/Hero";
 import Projects from "../components/Home/Projects";
 import PeopleIWorkedWith from "../components/Home/PeopleIWorkedWith";
@@ -11,8 +11,20 @@ import TechCarousel from "../components/Home/TechCarousel";
 import ProjectsWithModel from "../components/Home/ProjectsWithModel";
 
 function home() {
+  
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+  const [modalContent, setModalContent] = useState("");
+
+  const handleOpen = (content) => {
+    setModalContent(content);
+    setIsOpen(true);
+  };
   return (
-    <div className="bg-black">
+
+    <section className="bg-black flex justify-center items-center w-full">
+    <div className="bg-black w-full md:w-[1220px]">
       
       {/* Hero */}
        <ScrollFadeIn>
@@ -71,7 +83,20 @@ function home() {
         <PeopleIWorkedWith />
       </div>
       </ScrollFadeIn>
+
+
+
+      {/* Testing <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */}
+
+
+    
+      {/* End of Testing <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */}
+
+
+
+
     </div>
+    </section>
   );
 }
 

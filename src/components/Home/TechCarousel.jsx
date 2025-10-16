@@ -38,7 +38,7 @@ const TechCarousel = () => {
     <div className="py-20 mb-20 bg-black flex flex-col items-center justify-center overflow-hidden">
       
       {/* Header */}
-      <div className="w-full f p-5 md:ml-100 mb-10">
+      <div className="w-full f p-5 md:ml-10 mb-10">
         <h1 className="text-6xl md:text-8xl font-bold text-lime-400 tracking-tight">
           Tech
         </h1>
