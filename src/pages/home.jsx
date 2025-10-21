@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import Hero from "../components/Home/Hero";
 import Projects from "../components/Home/Projects";
 import PeopleIWorkedWith from "../components/Home/PeopleIWorkedWith";
@@ -21,6 +21,16 @@ function home() {
     setModalContent(content);
     setIsOpen(true);
   };
+
+
+useEffect(() => {
+  fetch(`${import.meta.env.VITE_API_URL}/ping`)
+  .then(res => console.log("Backend pinged"))
+  .catch(() => {});
+}, []);
+
+
+
   return (
 
     <section className="bg-black flex justify-center items-center w-full">
