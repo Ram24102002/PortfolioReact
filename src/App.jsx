@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Temp from "./pages/Temp";
+import Temp from "./pages/Temp.jsx";
 import {
   BrowserRouter as Router,
   Routes,
