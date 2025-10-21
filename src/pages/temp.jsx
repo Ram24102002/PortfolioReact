@@ -5,6 +5,7 @@ import Asan from "../assets/LOGOS/ASAN.png";
 import MegaMind from "../assets/LOGOS/MegaMind.png";
 import VOID from "../assets/LOGOS/VOID.png";
 import Amazon from "../assets/LOGOS/Amazon.png";
+import ChatWidget from "../components/common/ChatWidget";
 
 export default function Temp() {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,6 +63,8 @@ export default function Temp() {
       >
         <p>{selectedCompany?.details}</p>
       </Modal>
+
+      <ChatWidget />
     </div>
   );
 }

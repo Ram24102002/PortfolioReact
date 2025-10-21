@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-// import Temp from "../src/pages/Temp.jsx";
+import Temp from "../src/pages/Temp.jsx";
 import {
   BrowserRouter as Router,
   Routes,
@@ -29,7 +29,7 @@ function AppContent() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/temp" element={<Temp />} /> */}
+        <Route path="/temp" element={<Temp />} />
         <Route path="/sample" element={<Sample />} />
         <Route path="/get-in-touch" element={<GetInTouch />} />
         <Route path="/inbox" element={<Inbox />} />
