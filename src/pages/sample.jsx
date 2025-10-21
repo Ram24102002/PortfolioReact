@@ -1,60 +1,70 @@
-import PortLogo from '../assets/ProjectImages/portfolioMobile.png'
-import PortDesktop from '../assets/ProjectImages/PortDesktop.png'
-import profileImage from "../assets/ProfileImage.png"
+import React, { useState } from "react";
+import Modal from "../utils/Modal";
+
+import Asan from "../assets/LOGOS/ASAN.png";
+import MegaMind from "../assets/LOGOS/MegaMind.png";
+import VOID from "../assets/LOGOS/VOID.png";
+import Amazon from "../assets/LOGOS/Amazon.png";
+import ChatWidget from "../components/common/ChatWidget";
 
 export default function sample() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedCompany, setSelectedCompany] = useState(null);
+
+  const companies = [
+    {
+      id: 1,
+      name: "Company One",
+      logo: Asan,
+      details: "Worked as Frontend Developer. Built landing pages and dashboards."
+    },
+    {
+      id: 2,
+      name: "Company Two",
+      logo: MegaMind,
+      details: "Worked as Fullstack Developer. Developed APIs and integrations."
+    },
+    {
+      id: 3,
+      name: "Company Three",
+      logo: VOID,
+      details: "Worked on UI/UX design system with Tailwind + React."
+    },
+    {
+      id: 4,
+      name: "Company Four",
+      logo: Amazon,
+      details: "Contributed to backend microservices using Node.js and MongoDB."
+    },
+  ];
+
+  const openModal = (company) => {
+    setSelectedCompany(company);
+    setIsOpen(true);
+  };
+
   return (
-    <div className="min-h-screen bg-gray-500">
-      <div className="flex">
-        {/* Left Side - Main Content */}
-        <div className="w-1/3 p-12 ">
-          {/* Logo */}
-          <div className="mb-16">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-400 to-yellow-500 flex items-center justify-center flex-shrink-0">
-                        <img 
-                        className="w-20 h-20 rounded-full object-cover" 
-                        src={profileImage} alt="" />
-                      </div>
-            
-            <h1 className="text-5xl font-bold  mb-8 leading-tight">
-              Portfolio
-            </h1>
-            
-            <p className="text-xl  mb-12 leading-relaxed max-w-lg">
-              MERN Stack Developer Portfolio Website with Responsive Design and Interactive Features.
-            </p>
+    <div className="flex flex-wrap gap-6 justify-center">
+      {companies.map((company) => (
+        <img
+          key={company.id}
+          src={company.logo}
+          alt={company.name}
+          className="w-32 h-32 object-contain cursor-pointer hover:scale-110 transition-transform"
+          onClick={() => openModal(company)}
+        />
+      ))}
 
-            <button className="bg-lime-400   px-8 py-4 rounded-xl  font-medium hover:bg-lime-200  transition-colors shadow-sm">
-              Visite the Project
-            </button>
-          </div>
-        </div>
+      {/* Modal */}
+      <Modal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        title={selectedCompany?.name}
+      >
+        <p>{selectedCompany?.details}</p>
+      </Modal>
 
-        {/* Right Side - App Interfaces */}
-        <div className="w-2/3 p-8  flex items-center justify-center relative">
-
-        
-          {/* Mobile Phone */}
-          <div className='w-1/3 flex flex-col items-center justify-center mr-[-90px] z-10 mt-30'>
-              <div className='h-95 w-45 border-4 border-white rounded-3xl shadow-xl overflow-hidden mb-8'>
-                <img src={PortLogo} className='object-fit' alt="" />
-              </div>
-          </div>
-          
-
-
-          {/* Desktop Browser Window */}
-          <div className="mockup-browser bg-white border-base-300 border w-2/3">
-  <div className="mockup-browser-toolbar p-2">
-    <div className="input">https://portfolio-react-azure-kappa.vercel.app/</div>
-  </div>
-  <div className="grid place-content-center border-t border-base-300 h-80">
-    <img src={PortDesktop}  className=' py-5'  alt="" />
-  </div>
-</div>
-
-        </div>
-      </div>
+      <ChatWidget />
     </div>
   );
 }
