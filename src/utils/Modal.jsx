@@ -45,7 +45,7 @@ export default function Modal({ isOpen, onClose, name, children }) {
         </button>
 
         {/* Title */}
-        {name && <h2 className="text-xl font-semibold mb-4">{name}</h2>}
+        {name && <h2 className="text-3xl font-semibold m-5">{name}</h2>}
 
         {/* Content */}
         <div>{children}</div>

@@ -22,7 +22,7 @@ function ProjectsWithModel() {
           id: 1,
           title: "Asan Dev Nest",
           logo: AsanLogo,
-          description: "Worked with Asan Dev Nest as one of the Frontend Developer Intern to build and maintain web applications using React.js, Tailwind, HTML, CSS, and JavaScript.",
+          description: "Worked with Asan Dev Nest as one of the Frontend Developer Intern to build and maintain web applications using MERN Stack (React.js, Tailwind..ect.)",
           mobileImage: AsandevnestMobile,
           desktopImage: AsanPage,
           Completed: true,

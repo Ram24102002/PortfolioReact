@@ -4,6 +4,7 @@ import MegaMind from "../../assets/LOGOS/MegaMind.png";
 import VOID from "../../assets/LOGOS/VOID.png";
 import Amazon from "../../assets/LOGOS/Amazon.png";
 import Modal from "../../utils/Modal";
+import TakeMyTickets from "../../assets/LOGOS/TakeMyTickets.png";
 
 const PeopleIWorkedWith = () => {
 
@@ -15,27 +16,53 @@ const PeopleIWorkedWith = () => {
   const brands = [
     {
           id: 1,
-          name: "Company One",
+          name:  "💻 Asan DevNest - Frontend Developer",
           logo: Asan,
-          details: "Worked as Frontend Developer. Built landing pages and dashboards."
+          details: ["💻 Asan (DevNest) – Frontend Developer | Worked with React, Tailwind CSS, and JavaScript to build scalable UI solutions.",
+
+"🧩 Developed multiple responsive pages and UI components across the platform, ensuring a seamless and modern user experience.",
+
+"🌐 Contributed to a skill-first freelancing ecosystem connecting businesses with talented developers.",
+
+"🤖 Collaborated within a 2,000+ member AI-guided community, gaining mentorship and delivering impactful, real-world projects."]
         },
         {
           id: 2,
-          name: "Company Two",
+          name: "💼 Mega Mind Computing Solutions – Web Development Intern",
           logo: MegaMind,
-          details: "Worked as Fullstack Developer. Developed APIs and integrations."
+          details: [
+            "🔧 Contributed to both frontend and backend modules, collaborating closely with the development team on real-world client projects.",
+            "🛍️ Led frontend development of “E-Shop”, a full-stack e-commerce project submitted to the University of Madras.",
+            "💻 Developed dynamic, responsive pages and integrated APIs using HTML, CSS, JavaScript, PHP, and Laravel.",
+            "🚀 Enhanced user experience and performance, applying best practices in UI/UX, scalability, and code optimization."
+          ]
         },
         {
           id: 3,
-          name: "Company Three",
+          name: "🛍️Void Fashion - Fullstack Developer",
           logo: VOID,
-          details: "Worked on UI/UX design system with Tailwind + React."
+          details: ["🛍️ Modern Online T-Shirt Store — Void is a stylish e-commerce platform focused on selling T-shirts, providing users with a smooth and minimal shopping experience.",
+
+"⚛️ Built with React + Tailwind CSS — The frontend uses React for dynamic UI and Tailwind for fast, responsive, and modern styling, supporting both light and dark modes.",
+
+"🌱 Powered by Spring Boot Backend — A robust Spring Boot backend handles APIs, authentication, and database integration, ensuring security and scalability.",
+
+"🚀 Ongoing Full-Stack Development — Currently under active development, Void aims to deliver seamless browsing, cart management, and checkout features with a clean, performance-optimized design."]
         },
         {
           id: 4,
-          name: "Company Four",
+          name: "📦 Amazon - Quality Assurance Associate",
           logo: Amazon,
-          details : ["Amazon – QA Associate, Quality Services | May 2024 – Present",
+          details : ["💼 Amazon – Quality Assurance Associate (May 2024 – Present)",
+"🧪 Conducted API and manual testing for 9+ major features and 25+ release regressions.",
+"⚙️ Optimized QA workflows, saving 1,511+ team hours and $16.4K in FY2024 operational costs.",
+"🏆 Honored with “Star of the Quarter” award for outstanding performance and contribution."
+]},
+{
+          id: 5,
+          name: "🎟️ Take My Tickets - Quality Assurance",
+          logo: TakeMyTickets,
+          details : ["TakeMyTickets – Quality Asurance ",
 "Worked as a QA Associate performing API and manual testing for 9+ major features and 25+ release regressions.",
 "Improved processes, saving 1,511 team hours and $16.4K in FY2024 operational costs.",
 "Awarded “Star of the Quarter” for outstanding contributions."
@@ -85,7 +112,7 @@ const PeopleIWorkedWith = () => {
 
         {/* Infinite Scroll Row */}
         <div className="relative w-full overflow-hidden">
-  <div className="grid grid-cols-2 md:grid-cols-4 animate-marquee">
+  <div className="grid grid-cols-2 md:grid-cols-5 animate-marquee">
     {[...brands].map((brand, index) => (
       <div
         key={index}
