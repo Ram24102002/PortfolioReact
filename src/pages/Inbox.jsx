@@ -117,6 +117,31 @@ const filteredMessages =
   }) || [];
 
 
+
+const deleteMessage = async (id) => {
+  try {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/inbox/${id}`, {
+      method: "DELETE",
+    });
+
+    if (!res.ok) throw new Error("Failed to delete message");
+
+    // remove from state
+    setMessages((prev) => prev.filter((msg) => msg._id !== id));
+
+    // clear selected message if deleted
+    if (selectedMessage?._id === id) {
+      setSelectedMessage(null);
+    }
+
+    notifyTostFun("Message deleted 🗑️", "#11c011ff");
+  } catch (error) {
+    console.error("Error deleting message:", error);
+    notifyTostFun("Error deleting message ❌", "#b80707ff");
+  }
+};
+
+
   return (
     <div className="min-h-screen md:max-h-screen bg-black text-white flex flex-col-reverse md:flex-row overflow-hidden">
       {/* Left Panel */}
@@ -272,6 +297,9 @@ const filteredMessages =
               </p>
             </div>
 
+
+
+
             {/* Read / Unread toggle */}
             <div className="border-t border-gray-800 p-6">
               <button
@@ -307,10 +335,17 @@ const filteredMessages =
                     notifyTostFun("Error updating Read status","#b80707ff");
                   }
                 }}
-                className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded text-sm transition-colors"
+                className="px-4 py-2 bg-blue-900 hover:bg-gray-700 rounded text-sm transition-colors"
               >
                 {selectedMessage.read ? "Mark as Unread" : "Mark as Read"}
               </button>
+              {/* Delete Button */}
+            <button
+  onClick={() => deleteMessage(selectedMessage._id)}
+  className="ml-10 px-4 py-2 bg-red-800 hover:bg-gray-700 rounded text-sm transition-colors"
+>
+  Delete Message
+</button>
             </div>
           </>
         ) : (
