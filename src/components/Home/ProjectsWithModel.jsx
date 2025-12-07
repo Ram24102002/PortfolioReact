@@ -14,6 +14,10 @@ import AsandevnestMobile from '../../assets/ProjectImages/AsandevnestMobile.png'
 import VoidLogo from '../../assets/LOGOS/VOID.png'
 import VoidPage from '../../assets/ProjectImages/voidDesktop.png'
 import VoidMobile from '../../assets/ProjectImages/VoidMobile.png'
+// Hunger Away
+import HungerAwayLogo from '../../assets/LOGOS/HungerAwayLogo.png'
+import HungerAwayPC from '../../assets/ProjectImages/HungerAwayPC.png'
+import HungerAwayMobile from '../../assets/ProjectImages/HungerAwayMobile.png'
 
 function ProjectsWithModel() {
 
@@ -30,6 +34,16 @@ function ProjectsWithModel() {
         },
         {
           id: 2,
+          title: "HungerAway",
+          logo: HungerAwayLogo, 
+          description: "A community-driven food sharing platform that connects donors, volunteers, and people in need to reduce food waste and hunger.",
+          mobileImage: HungerAwayMobile, 
+          desktopImage: HungerAwayPC,
+          Completed: true,
+          projectLink: "https://hunger-away-fe.vercel.app/"
+        },
+        {
+          id: 3,
           title: "VOID Fashion",
           logo: VoidLogo,
           description: "E-commerce platform for fashion enthusiasts to explore and purchase trendy clothing items.",
@@ -39,7 +53,7 @@ function ProjectsWithModel() {
           projectLink: "https://void-frontend-nine.vercel.app/"
         },
         {
-          id: 3,
+          id: 4,
           title: "Portfolio",
           logo: profileImage,
           description: "MERN Stack Developer Portfolio Website with Responsive Design and Interactive Features.",
